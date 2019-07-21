@@ -1,0 +1,49 @@
+.ws-contents{
+    grid-area: m;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background-color: #d3f689;
+}
+
+.task-card{
+    display: flex;
+    flex-direction: column;
+    height: 110px;
+    grid-area: m;
+    background-color: white;
+    margin:10px;
+    border-radius: 10px;
+    padding: 3px;
+
+
+}
+
+.task-card-header{
+    height: 30px;
+    background-color: grey;
+    color: white;
+    border-radius: 10px;
+    padding: 2px 20px;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.tasks {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 30px;
+    background-color: antiquewhite;
+    color: black;
+    border-radius: 10px;
+    font-size: 1em;
+    margin: 2px 0;
+}
+
+.task-card-list {
+    display: flex;
+    flex-direction: column;
+    padding: 2px;
+
+}

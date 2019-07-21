@@ -1,0 +1,26 @@
+.navbar{
+    grid-area: h;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px;
+    align-content: center;
+    background-color: #6796e5;
+}
+
+.nav-logo{
+    width: 30px;
+    height: 30px;
+}
+
+.nav-logo img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;    
+}
+
+.nav-btn{
+    color: aliceblue;
+    font-weight: bold;
+    font-size: 1.5em; 
+}

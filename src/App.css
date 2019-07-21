@@ -22,7 +22,7 @@
 }
 
 
-.wrapper2{
+/* .wrapper2{
   background-color: lightseagreen;
   margin: 0;
   padding:0;
@@ -32,17 +32,17 @@
   grid-template-columns: 1fr  ;
   grid-template-rows: 0.3fr 0.2fr 4fr;
   grid-template-areas: "h" "sh" "m";  
-}
+} */
 
 
-
+/* /* 
 @media screen and (min-width: 34em){
   .wrapper2{
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: 0.5fr 3fr 1fr;
     grid-template-areas: "h h h" "l m r" "f f f";  
-  }
+  } 
 }
 
 

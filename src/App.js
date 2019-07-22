@@ -25,7 +25,6 @@ class App extends Component {
     )
   }
 
-  // onRouteChange = withRouter(({ history })  => { history.push('/login')});
 }
 
 export default App

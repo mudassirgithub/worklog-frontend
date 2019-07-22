@@ -1,11 +1,13 @@
-.card{
+.card-join{
     grid-area: m;
     width: 300px;
-    height: auto;
+    height: 100%;
     padding: 10px;
     display: flex;
     flex-direction:column;
     border-radius: 30px;
+    margin:auto;
+    background-color: white;
 }
 
 .card-btn .c-btn{

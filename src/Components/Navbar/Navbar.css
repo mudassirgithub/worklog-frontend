@@ -6,6 +6,10 @@
     padding: 15px;
     align-content: center;
     background-color: #6796e5;
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    left: 0;
 }
 
 .nav-logo{
@@ -20,7 +24,14 @@
 }
 
 .nav-btn{
-    color: aliceblue;
-    font-weight: bold;
-    font-size: 1.5em; 
+    width:100px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    text-align: center;
+}
+
+@media screen and (min-width: 34em){
+ 
 }

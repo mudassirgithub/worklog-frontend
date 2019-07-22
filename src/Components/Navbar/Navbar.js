@@ -12,7 +12,7 @@ class Navbar extends React.Component{
                 </div>
                 <button className="nav-btn">Example</button>
             </nav>
-        );
+        );  
     }
 }
 

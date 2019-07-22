@@ -1,4 +1,4 @@
-.card{
+.card-login{
     grid-area: m;
     width: 300px;
     height: auto;
@@ -6,6 +6,8 @@
     display: flex;
     flex-direction:column;
     border-radius: 30px;
+    margin:auto;
+    background-color: white;
 
 }
 
@@ -14,6 +16,7 @@
         height: 40px;
         border-radius: 50px;
         background-color: lightseagreen;
+        text-align: center;
         
 }
 
@@ -26,7 +29,6 @@
 }
 .card-title{
     text-align: center;
-    /* font-family:  */
 
 }
 

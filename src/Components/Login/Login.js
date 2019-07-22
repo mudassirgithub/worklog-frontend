@@ -1,7 +1,6 @@
 import React from 'react'
 import './Login.css'
 import ErrorCmp from '../ErrorCmp/ErrorCmp'
-// import ErrorCmp from './ErrorCmp/ErrorCmp';
 
 class Login extends React.Component {
   constructor (props) {
@@ -15,7 +14,7 @@ class Login extends React.Component {
 
   render () {
     return (
-      <div className='card'>
+      <div className='card-login'>
         <div className='card-title'>
           <h1>LOGIN</h1>
         </div>

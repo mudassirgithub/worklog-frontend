@@ -3,7 +3,8 @@
     display: flex;
     flex-direction: column;
     padding: 10px;
-    background-color: #d3f689;
+    background-color: #6796e5;
+    min-height: 100vh;
 }
 
 .task-card{
@@ -46,4 +47,8 @@
     flex-direction: column;
     padding: 2px;
 
+}
+
+@media screen and (min-width: 34em){
+    
 }

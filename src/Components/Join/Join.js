@@ -16,7 +16,7 @@ class Join extends React.Component {
 
   render () {
     return (
-      <form className='card'>
+      <form className='card-join'>
         <div className='card-title'>
           <h1>JOIN</h1>
         </div>

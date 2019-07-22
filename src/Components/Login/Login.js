@@ -8,7 +8,7 @@ class Login extends React.Component {
     this.state = {
       username: '',
       password: '',
-      loginError: ''
+      loginError: 'some error'
     }
   }
 
@@ -26,6 +26,7 @@ class Login extends React.Component {
             required
             onChange={this.onChange}
             name='username'
+            autoFocus
             placeholder='username'
             pattern='[a-z0-9]{6,18}'
             title='use no special ,Uppercase characters & length upto six to eighteen'

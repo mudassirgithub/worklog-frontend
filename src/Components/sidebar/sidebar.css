@@ -1,0 +1,10 @@
+@media screen and (min-width: 34em) {
+    .side-main {
+        grid-area: dl;
+        background-color: white;
+    }
+} 
+
+.side-main {
+    display: none;
+}

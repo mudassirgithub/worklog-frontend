@@ -1,18 +1,18 @@
 import React from 'react';
 import './workspace.css';
-import Navbar from '../Navbar/Navbar';
-import Filter from '../Filter/Filter';
+import Navbar from '../Navbar/Navbar';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
 import Usercard from '../Usercard/Usercard';
-import Float from '../Float/Float';
+// import Float from '../Float/Float';
+import Sidebar from '../sidebar/sidebar';
 
 class Workspace extends React.Component {
     render () {
         return (
             <div className='wrapper2'>
                 <Navbar />
-                <Filter />
+                <Sidebar />
                 <Usercard />
-                <Float />
+                {/* <Float /> */}
             </div>
         );
     }

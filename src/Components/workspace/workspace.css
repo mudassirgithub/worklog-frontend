@@ -1,22 +1,16 @@
 .wrapper2{
-  background-color: lightseagreen;
-  margin: 0;
-  padding:0;
-  width: 100vw;
-  height: 100vh;
   display: grid;
   grid-template-columns: 1fr  ;
-  grid-template-rows: 0.3fr 0.2fr 4fr;
-  grid-template-areas: "h" "sh" "m";  
+  grid-template-rows: 0.3fr 4fr;
+  grid-template-areas: "h" "m";  
+  min-height:100vh;
 }
-
-
 
 @media screen and (min-width: 34em){
   .wrapper2{
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows: 0.5fr 3fr 1fr;
-    grid-template-areas: "dh dh dh" "dl dm r" "df df df";  
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 0.5fr 5fr;
+    grid-template-areas: "dh dh dh" "dl dm dr";
   } 
 }

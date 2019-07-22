@@ -1,0 +1,22 @@
+.wrapper{
+    background-color: lightseagreen;
+    margin: 0;
+    padding:0;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: 0.5fr 5fr 1fr;
+    grid-template-areas: "h h h" "l m r" "f f f";  
+  }
+  
+  
+  @media screen and (min-width: 34em){
+    .wrapper{
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      grid-template-rows: 0.5fr 3fr 1fr;
+      grid-template-areas: "h h h" "l m r" "f f f";  
+    }
+  }
+  

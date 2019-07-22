@@ -1,5 +1,5 @@
 .navbar{
-    grid-area: h;
+    /* grid-area: h; */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -7,14 +7,24 @@
     align-content: center;
     background-color: #6796e5;
     position: fixed;
-    width: 100vw;
-    top: 0;
-    left: 0;
+    width: 100%;
+    z-index: 9999;
 }
 
 .nav-logo{
     width: 30px;
     height: 30px;
+}
+
+.nav-options {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+}
+
+.nav-options .nav-logo {
+    margin: 0 10px;
 }
 
 .nav-logo img{
@@ -33,5 +43,11 @@
 }
 
 @media screen and (min-width: 34em){
- 
+    /* .navbar{
+        grid-area: dh;
+    }   */
+    
+    .nav-options .nav-logo {
+        margin: 0 20px;
+    }
 }

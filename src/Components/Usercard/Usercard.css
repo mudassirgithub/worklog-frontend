@@ -4,7 +4,8 @@
     flex-direction: column;
     padding: 10px;
     background-color: #6796e5;
-    min-height: 100vh;
+    min-height: 100%;
+    height: auto;
 }
 
 .task-card{
@@ -50,5 +51,7 @@
 }
 
 @media screen and (min-width: 34em){
-    
+    .ws-contents{
+        grid-area: dm;
+    }
 }

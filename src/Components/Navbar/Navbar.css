@@ -1,14 +1,13 @@
 .navbar{
-    /* grid-area: h; */
+    grid-area: h;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 15px;
     align-content: center;
-    background-color: #6796e5;
+    background-color: lightseagreen;
     position: fixed;
     width: 100%;
-    z-index: 9999;
 }
 
 .nav-logo{
@@ -43,9 +42,9 @@
 }
 
 @media screen and (min-width: 34em){
-    /* .navbar{
+    .navbar{
         grid-area: dh;
-    }   */
+    }  
     
     .nav-options .nav-logo {
         margin: 0 20px;

@@ -23,14 +23,14 @@
     background-color: white;
     margin: 10px 20px;
 }
-span{
+.logo span{
     font-size: 1.2em;
     margin: -10px 0 7px 20px;
 
 }
 
 @media screen and (min-width: 34em){
-    span{
+    .logo span{
         font-size: 2em;
         margin: -10px 0 15px 15px;
 

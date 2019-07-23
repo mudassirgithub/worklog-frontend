@@ -1,0 +1,48 @@
+.page-mask {
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+
+}
+.task-modal {
+    grid-area: m;
+    border-radius: 20px;
+    margin:auto;
+    width:90%;
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    padding:20px;
+    justify-content: space-around;   
+    align-content: center;
+    background-color: lightseagreen;
+}
+
+.task-modal .task-input{
+    height: 40px;
+    width: 70%;
+    padding: 10px;
+    border: 2px solid grey;
+    border-radius: 10px;
+}
+
+.task-modal .task-btn{
+    width:25%;
+    height: 40px;
+    border-radius: 10px;
+    font-weight: bold;
+    color: lightseagreen;
+    text-align: center;
+    background-color: white;
+    border: 2px solid grey;
+}
+
+@media screen and (min-width: 34em) {
+    .task-modal {
+        grid-area: dm;
+    }
+}

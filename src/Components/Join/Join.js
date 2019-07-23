@@ -20,7 +20,6 @@ class Join extends React.Component {
         <div className='card-title'>
           <h1>JOIN</h1>
         </div>
-        {/* {this.props.ifError ?  <ErrorCmp error={this.state.joinError}/> : "" } */}
         {this.state.joinError && <ErrorCmp error={this.state.joinError}/>}
 
         <div className='card-item'>

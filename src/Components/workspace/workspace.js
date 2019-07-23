@@ -2,8 +2,9 @@ import React from 'react';
 import './workspace.css';
 import Navbar from '../Navbar/Navbar';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
 import Usercard from '../Usercard/Usercard';
-// import Float from '../Float/Float';
 import Sidebar from '../sidebar/sidebar';
+import Addtask from '../Navbar/addtask/addtask';
+import { BrowserRouter as Route } from 'react-router-dom'
 
 class Workspace extends React.Component {
     render () {
@@ -11,8 +12,9 @@ class Workspace extends React.Component {
             <div className='wrapper2'>
                 <Navbar />
                 <Sidebar />
+                <Addtask />
                 <Usercard />
-                {/* <Float /> */}
+                <Route path='/addtask' component={Addtask} />
             </div>
         );
     }

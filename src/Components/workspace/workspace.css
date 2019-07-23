@@ -1,4 +1,9 @@
 .wrapper2{
+  background-color: lightseagreen;
+  margin: 0;
+  padding:0;
+  width: 100vw;
+  min-height: 100vh;
   display: grid;
   grid-template-columns: 1fr  ;
   grid-template-rows: 0.3fr 4fr;

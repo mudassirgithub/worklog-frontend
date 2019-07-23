@@ -3,16 +3,15 @@
     display: flex;
     flex-direction: column;
     padding: 10px;
-    background-color: #6796e5;
-    min-height: 100%;
+    background-color: lightseagreen;
     height: auto;
+    width:100%;
 }
 
 .task-card{
     display: flex;
     flex-direction: column;
-    height: 110px;
-    grid-area: m;
+    height: auto;
     background-color: white;
     margin:10px;
     border-radius: 10px;
@@ -31,27 +30,26 @@
     font-size: 1em;
 }
 
-.tasks {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    height: 30px;
-    background-color: antiquewhite;
-    color: black;
-    border-radius: 10px;
-    font-size: 1em;
-    margin: 2px 0;
-}
 
-.task-card-list {
+.tasks-list {
     display: flex;
     flex-direction: column;
-    padding: 2px;
-
+    padding: 5px 15px;
 }
+
+.eachTask {
+    font-size: 1em;
+    margin-bottom: 5px;
+}
+
 
 @media screen and (min-width: 34em){
     .ws-contents{
         grid-area: dm;
+    }
+
+    .eachTask {
+        font-size: 1.2em;
+        margin-bottom: 5px;
     }
 }

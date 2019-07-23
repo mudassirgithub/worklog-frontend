@@ -13,8 +13,6 @@ class Cover extends React.Component {
           Worklog is a collaborative tool for workspaces to log todo's...
         </span>
         <div>
-          {/* <button type="button" name="join" className="c-btn" >Join</button> */}
-          {/* <button type="button" onClick={this.props.onRouteChange} name="login" className="c-btn">Log in</button> */}
           <button
             type='button'
             className='c-btn'

@@ -10,7 +10,7 @@ class Join extends React.Component {
       email: '',
       username: '',
       password: '',
-      joinError: 'some error'
+      joinError: ''
     }
   }
 

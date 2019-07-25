@@ -3,10 +3,12 @@ import './Navbar.css';
 import logo from './logo-square.png';
 import add from './add2.png';
 import signout from './signout.png'
-// import { BrowserRouter as Link } from "react-router-dom";
 
 
 class Navbar extends React.Component{
+    state = {
+        check: false
+    }
     render(){
         return(
             <nav className="navbar">
@@ -14,15 +16,20 @@ class Navbar extends React.Component{
                     <img src={logo}alt={'logoimage'}/>
                 </div>
                 <div className="nav-options">
-                        <div className="nav-logo">
-                            <img src={add} alt={'add-icon'}/>
-                        </div>
-                        <div className="nav-logo">
-                            <img src={signout} alt={'signout-icon'}/>
-                        </div>
+                        <button className="nav-logo" onClick={this.taskModalHandle}><img src={add} alt={'add-icon'}/></button>
+                        <button className="nav-logo"><img src={signout} alt={'signout-icon'}/></button>
+                        
                 </div>
             </nav>
         );  
+    }
+     
+    taskModalHandle = () => {
+        this.props.checkIfAddingTasks(!this.state.check);
+        this.setState(state => ({
+            check: !state.check
+        }));
+        
     }
 }
 

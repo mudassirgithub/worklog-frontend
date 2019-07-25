@@ -13,6 +13,8 @@
 .nav-logo{
     width: 30px;
     height: 30px;
+    background-color: lightseagreen;
+    border: 0;
 }
 
 .nav-options {
@@ -23,6 +25,7 @@
 }
 
 .nav-options .nav-logo {
+    width: 50px;
     margin: 0 10px;
 }
 

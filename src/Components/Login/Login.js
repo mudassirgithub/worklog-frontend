@@ -8,7 +8,7 @@ class Login extends React.Component {
     this.state = {
       username: '',
       password: '',
-      loginError: 'some error'
+      loginError: ''
     }
   }
 
@@ -18,7 +18,7 @@ class Login extends React.Component {
         <div className='card-title'>
           <h1>LOGIN</h1>
         </div>
-        {this.state.loginError && <ErrorCmp />}
+        {this.state.loginError && <ErrorCmp error={this.state.loginError}/>}
         <div className='card-item'>
           <label>Username</label>
           <input

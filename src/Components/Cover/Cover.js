@@ -1,6 +1,7 @@
 import React from 'react'
 import logo from './logo.png'
 import './Cover.css'
+import { Link } from 'react-router-dom'
 
 class Cover extends React.Component {
   render () {
@@ -13,25 +14,23 @@ class Cover extends React.Component {
           Worklog is a collaborative tool for workspaces to log todo's...
         </span>
         <div>
+          <Link exact to="/join">
           <button
             type='button'
             className='c-btn'
-            onClick={() => {
-              this.props.history.push('/join')
-            }}
           >
             Join
           </button>
-
+          </Link>
+          
+          <Link exact to="/login">
           <button
             type='button'
             className='c-btn'
-            onClick={() => {
-              this.props.history.push('/login')
-            }}
           >
             Login
           </button>
+          </Link>
         </div>
       </div>
     )

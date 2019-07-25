@@ -3,19 +3,29 @@ import './workspace.css';
 import Navbar from '../Navbar/Navbar';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
 import Usercard from '../Usercard/Usercard';
 import Addtask from '../addtask/addtask';
-// import { BrowserRouter as Route } from 'react-router-dom';
 
 class Workspace extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+          isAddingTasks: false
+        };
+      }
     render () {
         return (
             <div className='wrapper2'>
-                <Navbar />
+                <Navbar checkIfAddingTasks={this.checkIfAddingTasks}/>
                 <Usercard />
-                <Addtask />
-                {/* <Route path='/logs' component={Usercard} />
-                <Route path='/addtask' component={Addtask} /> */}
+                {this.state.isAddingTasks && <Addtask />}
             </div>
+            
         );
+    }
+
+    checkIfAddingTasks = (check) => {
+            this.setState(state => ({
+                isAddingTasks: !state.isAddingTasks
+            }));
     }
 }
 

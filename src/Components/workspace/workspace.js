@@ -16,16 +16,16 @@ class Workspace extends React.Component {
             <div className='wrapper2'>
                 <Navbar checkIfAddingTasks={this.checkIfAddingTasks}/>
                 <Usercard />
-                {this.state.isAddingTasks && <Addtask />}
+                {this.state.isAddingTasks && <Addtask checkIfAddingTasks={this.checkIfAddingTasks}/>}
             </div>
             
         );
     }
 
     checkIfAddingTasks = (check) => {
-            this.setState(state => ({
-                isAddingTasks: !state.isAddingTasks
-            }));
+            this.setState({
+                isAddingTasks: check
+            });
     }
 }
 

@@ -12,7 +12,7 @@ class Addtask extends React.Component {
 
     render () {
         return (
-            <div id="page-mask">
+            <div id="page-mask" ref={node => this.node = node}>
                 <form className="task-modal" role="dialog">
                     <input autoFocus onChange={this.editTask} required className="task-input" type="text" name="task" placeholder="Write your task here.."></input> 
                     <button type='submit' onClick={this.onSubmitTaskForm} className='task-btn'>Add</button>
@@ -37,6 +37,20 @@ class Addtask extends React.Component {
             user_id: this.state.user_id
           })
         })
+    }
+
+    componentWillMount() {
+        document.addEventListener('mousedown', this.handleClick, false);
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener('mousedown', this.handleClick, false);
+    }
+
+    handleClick = (e) => {
+        if (this.node.contains(e.target)) {
+            return (this.props.checkIfAddingTasks(false));
+        }
     }
 
 }    

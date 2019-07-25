@@ -29,6 +29,27 @@ class Usercard extends React.Component{
                         <span className="eachTask">describe the task  ....</span>
                     </div>
                 </div>
+                <div className="task-card" >
+                    <div className="task-card-header">user</div>
+                    <div className="tasks-list">
+                        <span className="eachTask">describe the task  ....</span>
+                        <span className="eachTask">describe the task  ....</span>
+                    </div>
+                </div>
+                <div className="task-card" >
+                    <div className="task-card-header">user</div>
+                    <div className="tasks-list">
+                        <span className="eachTask">describe the task  ....</span>
+                        <span className="eachTask">describe the task  ....</span>
+                    </div>
+                </div>
+                <div className="task-card" >
+                    <div className="task-card-header">user</div>
+                    <div className="tasks-list">
+                        <span className="eachTask">describe the task  ....</span>
+                        <span className="eachTask">describe the task  ....</span>
+                    </div>
+                </div>
             </div>
         );
     }

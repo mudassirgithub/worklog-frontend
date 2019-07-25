@@ -13,9 +13,7 @@ class App extends Component {
   render () {
     return (
       <Router>
-        {LOGIN ? <Workspace /> : (
-          <Home />
-        )}
+        {LOGIN ? <Workspace /> : <Home />}
       </Router>
     );
   }

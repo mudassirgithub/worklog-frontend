@@ -6,20 +6,18 @@ class Addtask extends React.Component {
         super(props);
         this.state = {
             task: "",
-            user_id: "",
-            workspace_id: ""
+            user_id: ""
         };
     }
 
     render () {
         return (
-            <dialog className="page-mask">
+            <div id="page-mask">
                 <form className="task-modal" role="dialog">
                     <input autoFocus onChange={this.editTask} required className="task-input" type="text" name="task" placeholder="Write your task here.."></input> 
                     <button type='submit' onClick={this.onSubmitTaskForm} className='task-btn'>Add</button>
                 </form>
-            </dialog>
-
+            </div>
             
         );
     }
@@ -36,8 +34,7 @@ class Addtask extends React.Component {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             task: this.state.task,
-            user_id: this.state.user_id,
-            workspace_id: this.state.workspace_id
+            user_id: this.state.user_id
           })
         })
     }

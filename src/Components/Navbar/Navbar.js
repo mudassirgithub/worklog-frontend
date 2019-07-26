@@ -6,10 +6,7 @@ import signout from './signout.png'
 
 
 class Navbar extends React.Component{
-    state = {
-        check: false
-    }
-    render(){
+    render() {
         return(
             <nav className="navbar">
                 <div className="nav-logo">
@@ -25,10 +22,7 @@ class Navbar extends React.Component{
     }
      
     taskModalHandle = () => {
-        this.props.checkIfAddingTasks(!this.state.check);
-        this.setState(state => ({
-            check: !state.check
-        }));
+        this.props.checkIfAddingTasks(true);
         
     }
 }

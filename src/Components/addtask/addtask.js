@@ -12,8 +12,8 @@ class Addtask extends React.Component {
 
     render () {
         return (
-            <div id="page-mask" ref={node => this.node = node}>
-                <form className="task-modal" role="dialog">
+            <div id="page-mask" >
+                <form className="task-modal" role="dialog" ref={node => this.node = node}>
                     <input autoFocus onChange={this.editTask} required className="task-input" type="text" name="task" placeholder="Write your task here.."></input> 
                     <button type='submit' onClick={this.onSubmitTaskForm} className='task-btn'>Add</button>
                 </form>
@@ -48,7 +48,7 @@ class Addtask extends React.Component {
     }
 
     handleClick = (e) => {
-        if (this.node.contains(e.target)) {
+        if (!this.node.contains(e.target)) {
             return (this.props.checkIfAddingTasks(false));
         }
     }

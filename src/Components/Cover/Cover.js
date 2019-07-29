@@ -37,4 +37,4 @@ class Cover extends React.Component {
   }
 }
 
-export default Cover
+export default Cover;

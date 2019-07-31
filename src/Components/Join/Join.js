@@ -102,7 +102,9 @@ class Join extends React.Component {
   }
 
   onSubmitJoinForm = () => {
-    fetch('http://getworklog.herokuapp.com/join', {
+    const proxyurl = "https://cors-anywhere.herokuapp.com/";
+    const url4 = "http://getworklog.herokuapp.com/join";
+    fetch(proxyurl + url4, {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({

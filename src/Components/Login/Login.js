@@ -74,7 +74,9 @@ class Login extends React.Component {
   }
 
   onSubmitLoginForm = () => {
-    fetch('http://getworklog.herokuapp.com/login', {
+    const proxyurl = "https://cors-anywhere.herokuapp.com/";
+    const url3 = "http://getworklog.herokuapp.com/login";
+    fetch(proxyurl + url3, {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -87,7 +89,8 @@ class Login extends React.Component {
         if (data["hasError"] === true) {
           localStorage.setItem("loginError", data["msg"]);
         } else {
-          localStorage.setItem("loggedIn", true);
+          localStorage.setItem("user_id", data["user_id"]);
+          localStorage.setItem("loggedIn", true);          
           this.props.history.replace('/logs');
         }
       })

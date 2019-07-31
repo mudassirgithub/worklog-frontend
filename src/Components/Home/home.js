@@ -6,6 +6,12 @@ import Login from '../Login/Login';
 import Join from '../Join/Join';
 
 class Home extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+          errorMsg: ""
+        };
+      }
     render () {
         return (
             <div className='wrapper'>    
@@ -15,6 +21,12 @@ class Home extends React.Component {
           </div>
         );
     }
+
+    checkIfErrorMsg = (check) => {
+        this.setState({
+            ErrorMsg: check
+        });
+}
 } 
 
 export default Home;

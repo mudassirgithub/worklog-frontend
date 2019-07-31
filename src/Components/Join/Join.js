@@ -1,6 +1,7 @@
 import React from 'react'
 import './Join.css'
 import ErrorCmp from '../ErrorCmp/ErrorCmp';
+// import {Redirect, withRouter} from 'react-router-dom';
 
 class Join extends React.Component {
   constructor (props) {
@@ -62,7 +63,7 @@ class Join extends React.Component {
             type='password'
             required
             placeholder='enter password'
-            pattern='.[A-Za-z0-9]{6,10}'
+            pattern='[A-Za-z0-9]{6,10}'
             title='use no special characters &  length upto six to ten'
             onChange={this.onChange}
             name='password'
@@ -71,11 +72,11 @@ class Join extends React.Component {
 
         <div className='card-btn'>
           <button
-            type='submit'
+            // type='submit'
             onClick={this.onSubmitJoinForm}
             className='c-btn'
           >
-            Join{' '}
+            Join
           </button>
         </div>
       </form>
@@ -100,11 +101,13 @@ class Join extends React.Component {
     })
       .then(response => response.json())
       .then(data  => {
-        if (data.hasError === true) {
-          console.log(data.msg);
-          this.setState((state) => {
-             
+        if (data["hasError"] === true) {
+          console.log(data["msg"])
+          this.setState({
+            joinError: data["msg"]
           });
+        } else {
+          this.props.history.replace('/login');
         }
       })
   }

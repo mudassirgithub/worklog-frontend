@@ -9,9 +9,23 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      loggedIn: false,
-      errorMsg: ""
+      loggedIn: false
     };
+  }
+
+  componentDidMount() {
+    const checkLogin = localStorage.getItem("loggedIn");
+    if (checkLogin != null) {
+      this.setState({
+        loggedIn : checkLogin
+      });
+    }
+  
+
+  window.addEventListener("beforeunload", () => {
+    localStorage.setItem("loggedIn", this.state.loggedIn);
+  });
+
   }
   
   render () {

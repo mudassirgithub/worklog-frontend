@@ -12,6 +12,19 @@ class Login extends React.Component {
     }
   }
 
+  componentDidMount() {
+    const checkError = localStorage.getItem("loginError");
+    if (checkError != null) {
+      this.setState({
+        loginError : checkError
+      });
+    }
+
+    window.addEventListener("beforeunload", () => {
+      localStorage.setItem("loginError", "");
+    });
+  }
+
   render () {
     return (
       <div className='card-login'>
@@ -46,7 +59,7 @@ class Login extends React.Component {
         </div>
 
         <div className='card-btn'>
-          <button type='submit' className='c-btn'>
+          <button type='submit' onClick={this.onSubmitLoginForm} className='c-btn'>
             Login
           </button>
         </div>
@@ -58,6 +71,26 @@ class Login extends React.Component {
     this.setState({
       [event.target.name]: event.target.value
     })
+  }
+
+  onSubmitLoginForm = () => {
+    fetch('http://getworklog.herokuapp.com/login', {
+      method: 'post',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        username: this.state.username,
+        password: this.state.password
+      })
+    })
+      .then(response => response.json())
+      .then(data  => {
+        if (data["hasError"] === true) {
+          localStorage.setItem("loginError", data["msg"]);
+        } else {
+          localStorage.setItem("loggedIn", true);
+          this.props.history.replace('/logs');
+        }
+      })
   }
 }
 

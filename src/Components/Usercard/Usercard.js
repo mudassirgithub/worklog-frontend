@@ -9,8 +9,7 @@ class Usercard extends React.Component{
             user:"",
             allTasks:[],
             allUsers:[],
-            isLoaded: false,
-            msg: "Loading..."
+            isLoaded: false
         };
     }
 
@@ -37,39 +36,18 @@ class Usercard extends React.Component{
             })
         .catch(console.log)
         this.setState({isLoaded: true})
-        // if (this.state.allTasks.length === 0 || this.state.allUsers.length === 0) {
-        //     this.setState({ msg: "error occured while loading" });
-        // } else {
-        //     this.setState({ msg: "loading..." });
-        //     // var cards = []
-        //     // var card = {
-        //     //     "user_name": "",
-        //     //     "tasks": []
-        //     // }
-        //     // var name;
-        //     // for (var i = 0; i < this.state.allTasks.length; i++) {
-        //     //     for (var j = 0; j < this.state.allUsers.length; j++) {
-        //     //         if (i.user_id === j.id) {
-        //     //             card["user_name"] = name;
-        //     //             return;
-        //     //         }
-        //     //     }
-        //     //     card["tasks"].push = i.description
-        //     // }
-        //     this.setState({isLoaded: true })
-        // } 
     }
 
    
 
 
     render(){
-        if (!this.state.isLoaded) {
+        if (this.state.isLoaded === false) {
             return (
                 <div className="ws-contents">
                     <div className="task-card" >
                         <div className="tasks-list">
-                            <span className="eachTask">{this.state.msg}</span>
+                            <span className="eachTask">Loading...</span>
                         </div>
                     </div>
                 </div>   

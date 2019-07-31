@@ -14,8 +14,8 @@ class Navbar extends React.Component{
                 </div>
                 <div className="nav-options">
                         <button className="nav-logo" onClick={this.taskModalHandle}><img src={add} alt={'add-icon'}/></button>
-                        <button className="nav-logo"><img src={signout} alt={'signout-icon'}/></button>
-                        
+                        <button className="nav-logo" onClick={this.logoutHandle}><img src={signout} alt={'signout-icon'}/></button>
+                    
                 </div>
             </nav>
         );  
@@ -24,6 +24,10 @@ class Navbar extends React.Component{
     taskModalHandle = () => {
         this.props.checkIfAddingTasks(true);
         
+    }
+
+    logoutHandle = () => {
+        localStorage.setItem("loggedIn", false);
     }
 }
 

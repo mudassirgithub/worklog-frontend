@@ -15,6 +15,19 @@ class Join extends React.Component {
     }
   }
 
+  componentDidMount() {
+    const checkError = localStorage.getItem("joinError");
+    if (checkError != null) {
+      this.setState({
+        joinError : checkError
+      });
+    }
+
+    window.addEventListener("beforeunload", () => {
+      localStorage.setItem("joinError", "");
+    });
+  }
+
   render () {
     return (
       <form className='card-join'>
@@ -72,7 +85,7 @@ class Join extends React.Component {
 
         <div className='card-btn'>
           <button
-            // type='submit'
+            type='submit'
             onClick={this.onSubmitJoinForm}
             className='c-btn'
           >
@@ -102,10 +115,7 @@ class Join extends React.Component {
       .then(response => response.json())
       .then(data  => {
         if (data["hasError"] === true) {
-          console.log(data["msg"])
-          this.setState({
-            joinError: data["msg"]
-          });
+          localStorage.setItem("joinError", data["msg"]);
         } else {
           this.props.history.replace('/login');
         }
@@ -113,4 +123,4 @@ class Join extends React.Component {
   }
 }
 
-export default Join
+export default Join;

@@ -2,7 +2,7 @@ import React from 'react';
 import './Navbar.css';
 import logo from './logo-square.png';
 import add from './add2.png';
-import signout from './signout.png'
+import signout from './signout.png';
 
 
 class Navbar extends React.Component{
@@ -14,8 +14,7 @@ class Navbar extends React.Component{
                 </div>
                 <div className="nav-options">
                         <button className="nav-logo" onClick={this.taskModalHandle}><img src={add} alt={'add-icon'}/></button>
-                        <button className="nav-logo" onClick={this.logoutHandle}><img src={signout} alt={'signout-icon'}/></button>
-                    
+                        <button className="nav-logo" onClick={this.logout}><img src={signout} alt={'signout-icon'}/></button>
                 </div>
             </nav>
         );  
@@ -24,10 +23,6 @@ class Navbar extends React.Component{
     taskModalHandle = () => {
         this.props.checkIfAddingTasks(true);
         
-    }
-
-    logoutHandle = () => {
-        localStorage.setItem("loggedIn", false);
     }
 }
 

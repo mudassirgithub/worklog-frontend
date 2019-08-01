@@ -15,19 +15,6 @@ class Join extends React.Component {
     }
   }
 
-  componentDidMount() {
-    const checkError = localStorage.getItem("joinError");
-    if (checkError != null) {
-      this.setState({
-        joinError : checkError
-      });
-    }
-
-    window.addEventListener("beforeunload", () => {
-      localStorage.setItem("joinError", "");
-    });
-  }
-
   render () {
     return (
       <form className='card-join'>
@@ -102,26 +89,8 @@ class Join extends React.Component {
   }
 
   onSubmitJoinForm = () => {
-    const proxyurl = "https://cors-anywhere.herokuapp.com/";
-    const url4 = "http://getworklog.herokuapp.com/join";
-    fetch(proxyurl + url4, {
-      method: 'post',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        email: this.state.email,
-        username: this.state.username,
-        password: this.state.password,
-        name: this.state.name
-      })
-    })
-      .then(response => response.json())
-      .then(data  => {
-        if (data["hasError"] === true) {
-          localStorage.setItem("joinError", data["msg"]);
-        } else {
-          this.props.history.replace('/login');
-        }
-      })
+  console.log("join");
+  this.props.history.push('/login');
   }
 }
 

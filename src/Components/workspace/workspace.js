@@ -11,6 +11,7 @@ class Workspace extends React.Component {
           isAddingTasks: false
         };
       }
+
     render () {
         return (
             <div className='wrapper2'>
@@ -27,6 +28,8 @@ class Workspace extends React.Component {
                 isAddingTasks: check
             });
     }
+
+    
 }
 
 export default Workspace;

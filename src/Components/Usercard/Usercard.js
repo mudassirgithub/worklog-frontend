@@ -6,41 +6,12 @@ class Usercard extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            user:"",
+            user_id: null,
             allTasks:[],
             allUsers:[],
             isLoaded: false
-        };
-    }
-
-    componentDidMount() {
-        const proxyurl = "https://cors-anywhere.herokuapp.com/";
-        const url1 = "http://getworklog.herokuapp.com/alltasks";
-        const url2 = "http://getworklog.herokuapp.com/allusers"; // site that doesn’t send Access-Control-*
-        fetch(proxyurl + url1, {
-            method: 'get',
-            headers: { 'Content-Type': 'application/json' }})
-        .then(res => res.json())
-        .then((data) => {
-            var temp = [...data["all_tasks"]]
-            this.setState({ allTasks: temp })
-        })
-        .catch(console.log)
-        fetch(proxyurl + url2, {
-            method: 'get',
-            headers: { 'Content-Type': 'application/json' }})
-        .then(res => res.json())
-        .then((data) => {
-            var temp2 = [...data["all_users"]]
-            this.setState({ allUsers: temp2 })
-            })
-        .catch(console.log)
-        this.setState({isLoaded: true})
-    }
-
-   
-
-
+        }
+    }    
     render(){
         if (this.state.isLoaded === false) {
             return (

@@ -29,14 +29,7 @@ class Addtask extends React.Component {
     }
 
     onSubmitTaskForm = () => {
-        fetch('http://getworklog.herokuapp.com/addtask', {
-          method: 'post',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            task: this.state.task,
-            user_id: this.state.user_id
-          })
-        })
+        
     }
 
     componentWillMount() {

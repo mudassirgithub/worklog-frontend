@@ -1,38 +1,16 @@
 import React, { Component } from 'react'
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { BrowserRouter as Router, Route, Redirect} from 'react-router-dom'
+import { BrowserRouter as Router, Route} from 'react-router-dom'
 import Workspace from './Components/workspace/workspace';
 import Home from './Components/Home/home';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      loggedIn: false
-    };
-  }
-
-  componentDidMount() {
-    const checkLogin = localStorage.getItem("loggedIn");
-    if (checkLogin != null) {
-      this.setState({
-        loggedIn : checkLogin
-      });
-    }
-  
-
-  window.addEventListener("beforeunload", () => {
-    localStorage.setItem("loggedIn", this.state.loggedIn);
-  });
-
-  }
-  
   render () {
     return (
       <Router>
-            {this.state.loggedIn? <Redirect to='/logs' /> : <Home />}
-            <Route path='/logs' exact strict render={() => (this.state.loggedIn? (<Workspace />) : (<Redirect to='/' />))} />
+            <Home />
+            {/* <Route path='/logs' exact strict component={Workspace} /> */}
       </Router>
     );
   }

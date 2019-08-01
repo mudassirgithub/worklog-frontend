@@ -1,6 +1,7 @@
 import React from 'react'
 import './Login.css'
-import ErrorCmp from '../ErrorCmp/ErrorCmp'
+import ErrorCmp from '../ErrorCmp/ErrorCmp';
+import {Link} from 'react-router-dom';
 
 class Login extends React.Component {
   constructor (props) {
@@ -11,23 +12,15 @@ class Login extends React.Component {
       loginError: ''
     }
   }
-
-  componentDidMount() {
-    const checkError = localStorage.getItem("loginError");
-    if (checkError != null) {
-      this.setState({
-        loginError : checkError
-      });
-    }
-
-    window.addEventListener("beforeunload", () => {
-      localStorage.setItem("loginError", "");
-    });
+  
+  onSubmitLoginForm = () => {
+    console.log("login");
+    this.props.history.push('/logs');
   }
 
   render () {
     return (
-      <div className='card-login'>
+      <form className='card-login'>
         <div className='card-title'>
           <h1>LOGIN</h1>
         </div>
@@ -53,17 +46,17 @@ class Login extends React.Component {
             placeholder='enter password'
             onChange={this.onChange}
             name='password'
-            pattern='.[A-Za-z0-9]{6,10}'
+            pattern='[A-Za-z0-9]{6,10}'
             title='use no special characters & length upto six to ten'
           />
         </div>
 
         <div className='card-btn'>
-          <button type='submit' onClick={this.onSubmitLoginForm} className='c-btn'>
+        <Link to='/logs'><button type='submit' onClick={this.onSubmitLoginForm} className='c-btn'>
             Login
-          </button>
+          </button></Link>
         </div>
-      </div>
+      </form>
     )
   }
 
@@ -72,29 +65,7 @@ class Login extends React.Component {
       [event.target.name]: event.target.value
     })
   }
-
-  onSubmitLoginForm = () => {
-    const proxyurl = "https://cors-anywhere.herokuapp.com/";
-    const url3 = "http://getworklog.herokuapp.com/login";
-    fetch(proxyurl + url3, {
-      method: 'post',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        username: this.state.username,
-        password: this.state.password
-      })
-    })
-      .then(response => response.json())
-      .then(data  => {
-        if (data["hasError"] === true) {
-          localStorage.setItem("loginError", data["msg"]);
-        } else {
-          localStorage.setItem("user_id", data["user_id"]);
-          localStorage.setItem("loggedIn", true);          
-          this.props.history.replace('/logs');
-        }
-      })
-  }
+  
 }
 
 export default Login;

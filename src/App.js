@@ -6,11 +6,16 @@ import Workspace from './Components/workspace/workspace';
 import Home from './Components/Home/home';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      loggedIn: false
+    };
   render () {
     return (
       <Router>
-            <Home />
-            {/* <Route path='/logs' exact strict component={Workspace} /> */}
+            {this.state.loggedIn? <Redirect to='/logs' /> : <Home />}
+            <Route path='/logs' exact strict render={() => (this.state.loggedIn? (<Workspace />) : (<Redirect to='/' />))} />
       </Router>
     );
   }
